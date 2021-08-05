@@ -1,0 +1,15 @@
+CREATE TABLE Tb_Cliente (
+Id INT NOT NULL PRIMARY KEY IDENTITY,
+Nome nVarchar(MAX) NOT NULL,
+Email nVarChar(MAX) NOT NULL,
+Imagem VARBINARY(MAX) NOT NULL,
+)
+
+CREATE TABLE Tb_ClienteLogradouro (
+Id INT NOT NULL PRIMARY KEY IDENTITY,
+IdCliente INT NOT NULL,
+Logradouro nVarChar(MAX) NOT NULL,
+
+CONSTRAINT FK_Tb_Cliente_Cliente FOREIGN KEY (IdCliente) REFERENCES Tb_Cliente (Id)
+)
+
